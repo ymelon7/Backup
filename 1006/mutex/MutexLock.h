@@ -31,4 +31,19 @@ bool isLocking_;
 };
 
 
+class MutexLockGuard : boost::noncopyable
+{
+public:
+    MutexLockGuard(MutexLock &mutex) 
+        :mutex_(mutex)
+    { mutex_.lock(); }
+    
+    ~MutexLockGuard()
+    { mutex_.unlock(); }
+
+private:
+    MutexLock &mutex_;
+};
+
+
 #endif //MUTEX_LOCK_H

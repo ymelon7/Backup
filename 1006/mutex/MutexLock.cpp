@@ -21,7 +21,7 @@ void MutexLock::lock()
 
 void MutexLock::unlock()
 {
-    assert(isLocking());
+    //assert(isLocking());
 
     TINY_CHECK(!pthread_mutex_unlock(&mutex_));
     isLocking_ = false;

@@ -1,4 +1,5 @@
 #include "Thread.h"
+#include <assert.h>
 
 Thread::Thread()
     :threadId_(0),

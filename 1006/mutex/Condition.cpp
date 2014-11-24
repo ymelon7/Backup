@@ -15,7 +15,7 @@ Condition::~Condition()
 
 void Condition::wait()
 {
-    assert(mutex_.isLocking());
+    //assert(mutex_.isLocking());
 
     TINY_CHECK(!pthread_cond_wait(&cond_, mutex_.getMutexPtr()));
     //TINY_CHECK(!pthread_cond_wait(&cond_, &mutex_); //error, explain?
